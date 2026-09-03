@@ -320,7 +320,7 @@ class DataProcessor:
             'от 5 и более'
         ]
 
-        self.profiles['orders_segment'] = np.select(conditions, choices)
+        self.profiles['orders_segment'] = np.select(conditions, choices, default='не определено')
 
         print("Распределение по сегментам:")
         print(self.profiles['orders_segment'].value_counts().to_string())
